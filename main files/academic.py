@@ -1,4 +1,4 @@
-# acad.py
+
 import mysql.connector
 from prettytable import PrettyTable
 from tabulate import tabulate
@@ -78,7 +78,7 @@ def insert_data():
         for i in range(1, 7):
             subject_input = input(f"Enter marks for Subject {i} (format: credit,grade): ")
             subjects.append(subject_input)
-        gpa = calculate_gpa(subjects)
+        gpa = calculate_gpa(subjects,total_credits)
         cgpa = calculate_cgpa( roll_number, gpa)
         pf = calculate_pf(subjects)
         cursor.execute("""

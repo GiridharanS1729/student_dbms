@@ -2,8 +2,6 @@
 import mysql.connector as mc
 from prettytable import PrettyTable
 
-
-
 mydb = mc.connect(
     host = "localhost",
     user = "root",
@@ -12,7 +10,7 @@ mydb = mc.connect(
     )
 cur = mydb.cursor()
 
-table_name = "detail"
+table_name = "details"
 
 all_table = PrettyTable()
 all_table.field_names = ["Roll Number", "Name", "Gender", "Date Of Birth", "Mobile Number", "Email Id", "Department", "Year of Study"]

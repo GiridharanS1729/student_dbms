@@ -1,1 +1,1 @@
-# student_dbms
+# student_dbms ,This Project is created using mysql and python for my project Student Database Management System
