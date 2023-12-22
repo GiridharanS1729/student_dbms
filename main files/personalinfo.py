@@ -18,15 +18,9 @@ all_table.field_names = ["Roll Number", "Name", "Gender", "Date Of Birth", "Mobi
 one_table = PrettyTable()
 one_table.field_names = ["Roll Number", "Name", "Gender", "Date Of Birth", "Mobile Number", "Email Id", "Department", "Year of Study"]
 
-def choose():
-    create_table()
-    print("(1) Insert New Data")
-    print("(2) Display")
-    print("(3) Update")
-    print("(4)Delete")
-    op = (input("Enter your option: "))
-    option(op)
 
+global x
+x=1
 def option(s):
     match s:
         case '1':
@@ -53,6 +47,9 @@ def option(s):
                 delete_one(input("Enter Roll number to delete : "))
             else:
                 print("Invalid choice.")
+        case '5':
+            print("Exited")
+            return
 
 def create_table():
     try:
@@ -74,11 +71,12 @@ def insert_row():
     dept = input('Enter Department : ')
     year = input('Enter Year of Study : ')
     val = (roll, name, gender, dob, mob, email, dept, year)
+    all_table.add_row(val)
     cur.execute(ins, val)
     mydb.commit()
     print("Successfully inserted.")
 
-def show_all():
+def add_to_all():
     try:
         sel = f"SELECT * FROM {table_name}"
         cur.execute(sel)
@@ -87,11 +85,27 @@ def show_all():
             print("\nPersonal Details : \n")
             for row in rows:
                 all_table.add_row([row[0], row[1], row[2], row[3], row[4], row[5], row[6], row[7]])
+    except mc.Error as e:
+        print("Error in add all: ",e)
+
+def show_all():
+    try:
+        sel = f"SELECT * FROM {table_name}"
+        cur.execute(sel)
+        rows = cur.fetchall()
+        global x
+        if len(rows) > 0:
+            print("\nPersonal Details : \n")
+            if x==1:
+                for row in rows:
+                    all_table.add_row([row[0], row[1], row[2], row[3], row[4], row[5], row[6], row[7]])
             print(all_table)
         else:
             print("No data found.")
     except:
         print("Table not found.")
+    finally:
+        x+=1
 
 def show_particular(r):
     try:
@@ -137,4 +151,18 @@ def delete_one(roll):
         print("Deleted Successfully.\n")
     else:
         print("No data found in the Record.\n")
-# choose()
+try:
+    
+    def choose():
+        while True:
+            create_table()
+            print("(1) Insert New Data")
+            print("(2) Display")
+            print("(3) Update")
+            print("(4)Delete")
+            print("(5)Exit")
+            op = (input("Enter your option: "))
+            option(op)
+except mc.Error as e:
+    print("error in main last : ",e)
+choose()
