@@ -159,10 +159,10 @@ try:
             print("(1) Insert New Data")
             print("(2) Display")
             print("(3) Update")
-            print("(4)Delete")
-            print("(5)Exit")
+            print("(4) Delete")
+            print("(5) Exit")
             op = (input("Enter your option: "))
             option(op)
 except mc.Error as e:
     print("error in main last : ",e)
-choose()
+# choose()

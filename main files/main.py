@@ -3,8 +3,9 @@ import academic as aca
 while True:
     print("(1) Personal Details")
     print("(2) Academic Details")
-    print("(3) Display all details ")
+    print("(3) Display all details \n")
     s=input("Enter any one Option : ")
+    print("\n")
     if s=='1':
         per.choose()
     elif s=='2':
