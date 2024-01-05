@@ -112,7 +112,8 @@ def show_particular(r):
         sel = f"SELECT * FROM {table_name} WHERE Roll=%s"
         cur.execute(sel, (r,))
         res = cur.fetchone()
-        if res != None:
+        if res!=None:
+            one_table.clear_rows()
             one_table.add_row([res[0], res[1], res[2], res[3], res[4], res[5], res[6], res[7]])
             print(one_table)
         else:
@@ -161,8 +162,11 @@ try:
             print("(3) Update")
             print("(4) Delete")
             print("(5) Exit")
+            # print(one_table)
             op = (input("Enter your option: "))
             option(op)
 except mc.Error as e:
     print("error in main last : ",e)
 # choose()
+# print(one_table)
+# show_particular(input("E : "))

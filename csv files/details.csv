@@ -1,9 +1,9 @@
 Roll,Name,Gender,DOB,MobileNumber,EmailID,Department,YearOfStudy
-1,Vignesh,Male,12-11-2004,9561526165,vigneshd44@gmail.com,IT,3
-2,Elakiya,Female,08-07-2006,9867317261,elakiyae16@gmail.com,CSE,1
-3,Aravind,Male,15-06-2004,9641202574,aravindf13@gmail.com,FT,3
-4,Meera,Female,03-10-2004,9639077838,meerag78@gmail.com,EEE,3
-5,Giridharan,Male,05-07-2005,9361609946,giridharanh44@gmail.com,IT,2
-6,Vishal,Male,17-01-2005,9102898459,vishalk42@gmail.com,EIE,2
-7,Priya,Female,09-05-2005,8655594107,priyal29@gmail.com,CSE,2
-8,Nithya,Female,26-04-2005,9787224420,nithyam25@gmail.com,ECE,2
+9,Ashok,Male,31-08-2004,9641202574,ashok31@gmail.com,FT,3
+12,Bharath,Male,26-05-2004,9561526165,bharathm12@gmail.com,ECE,3
+24,Elakiya,Female,08-07-2006,9867317261,elakiyae16@gmail.com,IT,1
+25,Giridharan,Male,05-07-2005,9361609946,giridharans575@gmail.com,IT,2
+29,Meera,Female,03-10-2004,9639077838,meerag78@gmail.com,EEE,3
+32,Vishal,Male,17-01-2005,9102898459,vishalk42@gmail.com,EIE,2
+40,Priya,Female,09-05-2005,8655594107,priyal29@gmail.com,CSE,2
+44,Nithya,Female,26-04-2005,9787224420,nithyak25@gmail.com,ECE,2

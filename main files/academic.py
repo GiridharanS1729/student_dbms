@@ -151,6 +151,33 @@ def display_data( roll_number):#using tabulate package
     except mysql.connector.Error as err:
         print(f"Error in display: {err}")
 
+def display_data1( roll_number):#using tabulate package
+    try:
+        cursor.execute("""
+            SELECT * FROM marks
+            WHERE Roll_Number=%s
+        """, (roll_number,))
+        data = cursor.fetchone()
+        if data:
+            table_data = [
+                ["Total Credits", data[8]],
+                ["Subject 1", data[2]],
+                ["Subject 2", data[3]],
+                ["Subject 3", data[4]],
+                ["Subject 4", data[5]],
+                ["Subject 5", data[6]],
+                ["Subject 6", data[7]],
+                ["Current Semester GPA", data[9]],
+                ["CGPA up to Current Semester", data[10]],
+                ["Pass/Fail", data[11]],
+            ]
+            table = tabulate(table_data, tablefmt="grid")
+            print(table)
+        else:
+            print("No data found for the given roll number and name.")
+    except mysql.connector.Error as err:
+        print(f"Error in display: {err}")
+
 def display_all_records():
     try:
         cursor.execute("SELECT * FROM marks")
